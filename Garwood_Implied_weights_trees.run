@@ -1,0 +1,52 @@
+quote 
+A script by Russell Garwood which outputs trees run under implied weights at a few concavity constants (piwe=) in TNT
+;
+
+
+macro =;
+var:NumTrees;
+keep 0; 
+
+piwe=0.25; mult=tbr replic 1000 hold 100;
+nelsen*;
+set NumTrees ntrees;
+ttag-; 
+ttag=; 
+naked=;
+tplot 'NumTrees'; 
+ttag & IW_k_pt25.svg; 
+
+keep 0;
+
+piwe=1.0; mult=tbr replic 1000 hold 100;
+nelsen*;
+set NumTrees ntrees;
+ttag-; 
+ttag=; 
+naked=;
+tplot 'NumTrees'; 
+ttag & IW_k_1pt0.svg;  
+
+keep 0;
+
+piwe=3.0; mult=tbr replic 1000 hold 100;
+nelsen*;
+set NumTrees ntrees;
+ttag-; 
+ttag=; 
+naked=;
+tplot 'NumTrees'; 
+ttag & IW_k_3pt0.svg; 
+
+keep 0;
+
+piwe=10.0; mult=tbr replic 1000 hold 100;
+nelsen*;
+set NumTrees ntrees;
+ttag-; 
+ttag=; 
+naked=;
+tplot 'NumTrees'; 
+ttag & IW_k_10pt0.svg; 
+
+macro -;
