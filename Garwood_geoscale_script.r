@@ -13,7 +13,7 @@ matrix.strict.tree <- read.nexus("Garwood_Dunlop_chelicerate_matrix_development_
 matrix.ts.strict.tree <- DatePhylo(matrix.strict.tree,matrix.ages,rlen=1,method="equal")
 
 
-pdf("r_tree.pdf")
+pdf("R_tree.pdf")
 #plot
 geoscalePhylo(matrix.ts.strict.tree,ages=matrix.ages,
 		#Units for tree
@@ -32,10 +32,14 @@ geoscalePhylo(matrix.ts.strict.tree,ages=matrix.ages,
 		cex.ts = 0.3,
 		#Width of the edges (lines) of the phylogeny
 		width = 0.8,
-		label.offset = 0.7
+		# Offset labels
+		label.offset = 0.7,
+		# Make non-talic
+		font =1
 		)
 dev.off()
-svg("r_tree.svg")
+
+svg("R_tree.svg")
 geoscalePhylo(matrix.ts.strict.tree,ages=matrix.ages,
 		#Units for tree
 		units=c("Period", "Epoch"),
@@ -53,7 +57,10 @@ geoscalePhylo(matrix.ts.strict.tree,ages=matrix.ages,
 		cex.ts = 0.3,
 		#Width of the edges (lines) of the phylogeny
 		width = 0.8,
-		label.offset = 0.7
+		# Offset labels
+		label.offset = 0.7,
+		# Make non-talic
+		font =1
 		)
 dev.off()
 
