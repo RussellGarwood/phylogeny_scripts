@@ -1,9 +1,14 @@
+# Phylogeny scripts 
+_____
 
-TNT Scripts
-=======
+- Russell Garwood (russell.garwood@manchester.ac.uk)
+_____
 
- - Russell Garwood (russell.garwood@manchester.ac.uk)
 
-======
+This repository hosts a collection of scripts for TNT and R that RJG finds useful for phylogenies. 
 
-A bunch of TNT scripts that Russell finds useful
+_____
+
+t:@russellgarwood
+w:www.russellgarwood.co.uk
+
