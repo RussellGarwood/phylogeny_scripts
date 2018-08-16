@@ -35,32 +35,10 @@ geoscalePhylo(matrix.ts.strict.tree,ages=matrix.ages,
 		# Offset labels
 		label.offset = 0.7,
 		# Make non-talic
-		font =1
-		)
-dev.off()
+		font =1,
+		#Remove quarternary labels
+		quat.rm = TRUE
 
-svg("R_tree.svg")
-geoscalePhylo(matrix.ts.strict.tree,ages=matrix.ages,
-		#Units for tree
-		units=c("Period", "Epoch"),
-		#Direction if needed
-		#direction="upwards"
-		#Include grey boxes
-		boxes="Epoch", 
-		#Frequency of tips
-		tick.scale = "Epoch",
-		#size of tip labels		
-		cex.tip = 0.4, 
-		#size of text on scale bar
-		cex.age = 0.3, 
-		#size on timescale
-		cex.ts = 0.3,
-		#Width of the edges (lines) of the phylogeny
-		width = 0.8,
-		# Offset labels
-		label.offset = 0.7,
-		# Make non-talic
-		font =1
 		)
 dev.off()
 

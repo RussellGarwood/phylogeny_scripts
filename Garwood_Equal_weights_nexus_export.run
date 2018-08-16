@@ -14,6 +14,6 @@ piwe -; mult=tbr replic 100 hold 100;
 ttag-;
 nelsen*;
 tchoose { strict } ;
-export - consensus.nex;
+export - Garwood_Dunlop_chelicerate_matrix_development_consensus.nex;
 macro -;
 
