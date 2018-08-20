@@ -1,5 +1,4 @@
 # Phylogeny scripts 
-_____
 
 - Russell Garwood (russell.garwood@manchester.ac.uk)
 _____
