@@ -37,7 +37,9 @@ geoscalePhylo(matrix.ts.strict.tree,ages=matrix.ages,
 		# Make non-talic
 		font =1,
 		#Remove quarternary labels
-		quat.rm = TRUE
+		quat.rm = TRUE,
+		#Stretch X axis so taxon names are not cut off
+		x.lim=c(500,-150)
 
 		)
 dev.off()
