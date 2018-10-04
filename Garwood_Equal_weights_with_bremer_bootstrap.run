@@ -1,4 +1,4 @@
-quote 
+quote
 A script by Russell Garwood which outputs a tree in equal weights analysis in TNT with support values
 in bootstrap and Bremer
 ;
@@ -6,23 +6,22 @@ in bootstrap and Bremer
 
 macro =;
 var:NumTrees;
-keep 0; 
+keep 0;
+rseed 0;
 piwe -; mult=tbr replic 1000 hold 100;
 ttag-;
 nelsen*;
-set NumTrees ntrees; 
+set NumTrees ntrees;
 ttag=;
 resample = boot frequency nogc from 'NumTrees' replications 10000;
 ttag);
-keep 0; 
+keep 0;
 piwe -; mult=tbr replic 1000 hold 100;
 nelsen*;
 sub 10;
 ttag=;
 bsupport !+'NumTrees';
 ttag);
-keep 0; 
-ttag &Equal_weights_with_supports.svg; 
+keep 0;
+ttag &Equal_weights_with_supports.svg;
 macro -;
-
-

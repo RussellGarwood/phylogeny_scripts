@@ -1,21 +1,21 @@
-quote 
+quote
 A script by Russell Garwood which outputs a tree as an SVG in equal weights analysis
 ;
 
 
 macro =;
 var:NumTrees;
-keep 0; 
-piwe -; 
-xmult= level 10; 
+keep 0;
+piwe -;
+rseed 0;
+xmult= level 10;
 bb;
 ttag-;
 nelsen*;
 set NumTrees ntrees;
-ttag-; 
-ttag=; 
+ttag-;
+ttag=;
 naked=;
-tplot 'NumTrees'; 
-ttag &Equal_weights_no_supports.svg; 
+tplot 'NumTrees';
+ttag &Equal_weights_no_supports.svg;
 macro -;
-

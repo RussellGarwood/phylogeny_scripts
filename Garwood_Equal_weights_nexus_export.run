@@ -1,4 +1,4 @@
-quote 
+quote
 A script by Russell Garwood which outputs consensus tree as a .nexus file using equal weights analysis
 ;
 
@@ -6,14 +6,14 @@ A script by Russell Garwood which outputs consensus tree as a .nexus file using 
 macro =;
 mxram 2500;
 taxname +100;
-p Garwood_Dunlop_chelicerate_matrix_development.tnt 
+p Garwood_Dunlop_chelicerate_matrix_development.tnt
 taxname =;
 hold 1000000;
-keep 0; 
+keep 0;
+rseed 0;
 piwe -; mult=tbr replic 1000 hold 100;
 ttag-;
 nelsen*;
 tchoose { strict } ;
 export - Garwood_Dunlop_chelicerate_matrix_development_consensus.nex;
 macro -;
-
