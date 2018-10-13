@@ -1,18 +1,18 @@
-quote 
+quote
 A script by Russell Garwood which outputs a tree run under implied weights at a set concavity constant (piwe=) in TNT with support values in symmetric resampling
 ;
 
 macro =;
-var:NumTrees; 
-keep 0; 
+var:NumTrees;
+keep 0;
 tag -;
+rseed 0;
 piwe=3.0; mult=tbr replic 1000 hold 100;
 nelsen*;
 set NumTrees ntrees;
 ttag=;
 resample = sym replications 10000 frequency nogc from 'NumTrees' prob 33;
 ttag);
-ttag=; 
-ttag & Implied_weights_supports.svg; 
+ttag=;
+ttag & Implied_weights_supports.svg;
 macro -;
-
