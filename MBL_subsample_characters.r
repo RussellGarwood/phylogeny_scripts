@@ -1,3 +1,4 @@
+#A script by Russell Garwood to take MBL2017 output and subsample to a desired number of characters
 #To run in R source("Sam_character_number_script.r")
 
 #Check for stringr

@@ -1,8 +1,8 @@
-#Script to extract steppiness of TreeSim curves
+#A script to extract steppiness of TreeSim curves from a cumulative species curve by Chris Knight, 2017.
 #Set the following lines and then select everything and run it in RStudio (control-enter)
 #This will then output a plot of the data (the same name as the data file, but with suffix _plot.pdf) and a tab delimited file with the steppiness data (suffix _steps.tsv)
 #adjust the following line to the the path to the data file
-path <- "~/Dropbox (The University of Manchester)/knightmareDocs/oddments/treeSim/TreeSim_species_curve_batch.txt"
+path <- "~/$$PATH/TreeSim_species_curve_batch.txt"
 #if you don't want a saved version of the plot, set this to FALSE (will always plot within R)
 pic <- TRUE
 #if you don't want a saved version of the steppiness etc., set this to FALSE
@@ -58,15 +58,15 @@ ds <- d %>%
 # Plot out
 p <- ggplot(ds, aes(x=iteration, y= species_no, colour=factor(run)))
 
-p + 
+p +
   geom_line() +
   scale_y_continuous("Species count") +
   scale_color_discrete(guide=FALSE) +
   theme_classic()
-outPic <- str_split(datafile, "\\.") %>% 
+outPic <- str_split(datafile, "\\.") %>%
   map_chr(1) %>%
   paste("_plot.pdf", sep = "")
-if(pic) ggsave(outPic, width=7, height = 7) 
+if(pic) ggsave(outPic, width=7, height = 7)
 
 #define functions to fit linear models and pull out relevant statistics from those models
 model <- function(dat) {lm(iteration ~ species_no-1, data=dat)} #fit the line through the origin the 'wrong' way round - time as a function of species count
@@ -93,7 +93,7 @@ dg <- ds %>%
   select(-c(dummy, data, mod, glance, tidy, augment, r2))
 
 #write out table
-outNm <- str_split(datafile, "\\.") %>% 
+outNm <- str_split(datafile, "\\.") %>%
   map_chr(1) %>%
   paste("_steps.tsv", sep = "")
 
@@ -103,12 +103,10 @@ if(fileSave) write_tsv(dg,outNm)
 # ggpairs(dg, columns = match(c("r2", "steppinessA", "steppinessB", "sar", "slowness"), names(dg)))
 
 # p2 <- ggplot(dg, aes(x= speed, y= steppiness))
-# 
+#
 # p2 +
 #   geom_point() +
 #   theme_classic()
 }
 ########
 stpness(path = path, pic = pic, fileSave = fileSave)
-
-

@@ -1,7 +1,8 @@
+# A script by Russell Garwood, modified from one by Alan Spencer, for plotting time-scaled phylogenies in R
 # To run use: 
 # Change directory to folder, e.g. setwd("/home/russell/Desktop/R_Plotting");
 # source("Garwood_Dunlop_geoscale_script.r")
-#If not installed, need install.packages(c("geoscale", "strap"), dependencies=TRUE)
+# If not installed, need install.packages(c("geoscale", "strap"), dependencies=TRUE)
 
 # Load libraries
 # note: we need to use our custom geoscale package v2.1 with ICS2018 included.

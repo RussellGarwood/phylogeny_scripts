@@ -1,4 +1,4 @@
-#A shell script which modified TREvoSim and TNT output files using GSED before loading an R script to calculate distances - by Russell Garwood 2018
+#A shell script which modifies TREvoSim and TNT output files using GSED before loading an R script to calculate distances - by Russell Garwood and Joe Keating 2018
 #Place this in TREvoSim output folder
 #Format trees so they can be loaded in R using ape
 echo "Starting sed in"
@@ -16,5 +16,5 @@ echo "Completed sed in TNT folder."
 # Go up a folder then exectue r script
 cd ..
 echo "Back in root now executing R script."
-Rscript Sam_script.r
+Rscript TREvoSim_TNT_distances.r
 echo "Done."
