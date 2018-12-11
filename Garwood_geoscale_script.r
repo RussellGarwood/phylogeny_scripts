@@ -1,5 +1,5 @@
 # A script by Russell Garwood, modified from one by Alan Spencer, for plotting time-scaled phylogenies in R
-# To run use: 
+# To run use:
 # Change directory to folder, e.g. setwd("/home/russell/Desktop/R_Plotting");
 # source("Garwood_Dunlop_geoscale_script.r")
 # If not installed, need install.packages(c("geoscale", "strap"), dependencies=TRUE)
@@ -10,6 +10,7 @@ library(strap)
 
 # Import tree data and taxa ages
 matrix.ages <-read.csv("Garwood_Dunlop_chelicerate_matrix_development_Dates.csv", row.names=1)
+#For bayesian analyses, to include poterior probabilities as node labels, the tree from MrBayes which needs to be importanted is the simple consensus (see pg 35 of manual)
 matrix.strict.tree <- read.nexus("Garwood_Dunlop_chelicerate_matrix_development_consensus.nex")
 matrix.ts.strict.tree <- DatePhylo(matrix.strict.tree,matrix.ages,rlen=1,method="equal")
 
@@ -22,13 +23,13 @@ geoscalePhylo(matrix.ts.strict.tree,ages=matrix.ages,
 		#Direction if needed
 		#direction="upwards"
 		#Include grey boxes
-		boxes="Epoch", 
+		boxes="Epoch",
 		#Frequency of tips
 		tick.scale = "Epoch",
-		#size of tip labels		
-		cex.tip = 0.4, 
+		#size of tip labels
+		cex.tip = 0.4,
 		#size of text on scale bar
-		cex.age = 0.3, 
+		cex.age = 0.3,
 		#size on timescale
 		cex.ts = 0.3,
 		#Width of the edges (lines) of the phylogeny
@@ -41,8 +42,11 @@ geoscalePhylo(matrix.ts.strict.tree,ages=matrix.ages,
 		quat.rm = TRUE,
 		#Stretch X axis so taxon names are not cut off
 		x.lim=c(500,-150)
-
 		)
+
+#Add node labels if required
+#nodelabels(matrix.ts.strict.tree$node.label, adj = c(-0.2, 0.5), frame = "none", cex=0.4)
+
 dev.off()
 
 #clean up

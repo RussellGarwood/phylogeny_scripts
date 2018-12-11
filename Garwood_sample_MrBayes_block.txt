@@ -1,0 +1,27 @@
+
+begin mrbayes;
+
+set autoclose=yes nowarn=yes;
+
+[charsets that define the partitioning scheme]
+
+[setting evolutionary models for the partitioning]
+[Models for partitions]
+
+[We Use Mkv+G For Morph Data]
+lset coding=variable rates=gamma;
+
+[Unlink Parameters And Allow Relative Partition Rates]
+[unlink statefreq=(all) revmat=(all) shape=(all) pinvar=(all);
+prset applyto=(all) ratepr=variable;]
+
+[mcmc settings]
+set usebeagle=yes beagledevice=CPU beagleprecision=double beaglescaling=always beaglesse=no beagleopenmp=no;
+mcmcp temp=0.1 nchain=4 samplefreq=500 printfr=1000 nruns=2 append=no;
+mcmcp filename=topology_run;
+mcmc ngen=5000000;
+
+sumt conformat=simple filename=simple relburnin =yes burninfrac = 0.25;
+sumt relburnin=yes conformat=simple;
+sump relburnin =yes burninfrac = 0.25;
+end;
