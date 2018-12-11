@@ -1,0 +1,3 @@
+t1 <- read.nexus("********.run1.t")
+t2 <- read.nexus("********.run2.t")
+MCCtree <- maxCladeCred(c(t1, t2))
