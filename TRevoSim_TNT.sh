@@ -3,7 +3,7 @@ do
     wd=$(pwd)
     if [[ -d $d/TREvoSim_output/ ]];
     then
-        echo -e "Entered folder: "
+       # echo -e "Entered folder: "
         cd $d/TREvoSim_output/
         pwd
 
@@ -15,9 +15,10 @@ do
 
         echo "Moving into tnt folder and running parsimony searches."
         cd tnt
-        /home/russell/Desktop/Work/tnt64-no-tax-limit/tnt p ./tnt/TREvoSim_batch_modified.run
+        /home/russell/Desktop/Work/tnt64-no-tax-limit/tnt p ./TREvoSim_batch_modified.run
 
         echo "Done TNT searches"
+
     fi    
     cd $wd
 done
