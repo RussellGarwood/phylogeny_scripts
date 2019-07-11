@@ -6,7 +6,7 @@ A script by Russell Garwood which outputs a tree as an SVG in equal weights anal
 macro =;
 var:NumTrees;
 keep 0;
-rseed *;
+rseed 0;
 piwe -;
 mult=tbr replic 1000 hold 100;
 ttag-;
