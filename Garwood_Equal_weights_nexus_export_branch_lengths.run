@@ -1,0 +1,16 @@
+quote
+A script by Russell Garwood which outputs consensus tree as a .nexus file using equal weights analysis including branch lengths
+;
+
+
+macro =;
+taxname =;
+outgroup 0;
+keep 0;
+piwe -; mult=tbr replic 100 hold 100;
+ttag-;
+nelsen*;
+tchoose { strict } ;
+ttag=; blength * { strict } ;
+export > consensus_w_branch_lengths.nex;
+macro -;
