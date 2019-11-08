@@ -7,7 +7,7 @@ macro =;
 taxname =;
 outgroup 0;
 keep 0;
-piwe -; mult=tbr replic 100 hold 100;
+piwe -; mult=tbr replic 1000 hold 100;
 ttag-;
 nelsen*;
 tchoose { strict } ;
