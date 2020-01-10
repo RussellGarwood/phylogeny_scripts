@@ -3,6 +3,7 @@ A script by Russell Garwood which outputs a tree run under implied weights at a 
 ;
 
 macro =;
+taxname =;
 var:NumTrees;
 keep 0;
 tag -;
