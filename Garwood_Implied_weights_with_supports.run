@@ -15,4 +15,5 @@ resample = sym replications 10000 frequency nogc from 'NumTrees' prob 33;
 ttag);
 ttag=;
 ttag & Implied_weights_supports.svg;
+export < Implied_weights_with_supports.nex
 macro -;

@@ -50,6 +50,12 @@ geoscalePhylo(matrix.ts.strict.tree,ages=matrix.ages,
 nodelabels(matrix.ts.strict.tree$node.label, adj = c(-0.2, 0.5), frame = "none", cex=0.4)
 dev.off()
 
+library("treeio")
+library(ggtree)
+library("phylotate")
+
+#^tried all of these to get node labels to import. No luck.
+
 
 #Now parsimony - export from tnt needs to be run through fig tree to get a taxon block and allow it to load
 #This could actually be just the support values - no matter what, these do not seem to load - probably quickest to do them by hand. 
